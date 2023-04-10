@@ -15,6 +15,10 @@
 - Css
 - Html 
 
+## .How to Use this
+- npm install
+- npm run dev
+
 ## .contact
 
 - Email: Rajithasck@gmail.com
