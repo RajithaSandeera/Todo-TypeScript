@@ -8,9 +8,6 @@ const initApp = (): void => {
   const template = ListTemplate.instance
 
 
-  
-
-
   // Add listener to new entry form submit
   const itemEntryForm = document.getElementById("itemEntryForm") as HTMLFormElement
 
@@ -32,6 +29,10 @@ const initApp = (): void => {
       ? parseInt(fullList.list[fullList.list.length - 1].id) + 1
       : 1
 
+
+   
+
+
     // create new item
     const newItem = new ListItem(itemId.toString(), newEntryText)
     // Add new item to full list
@@ -40,6 +41,7 @@ const initApp = (): void => {
     template.render(fullList)
 
     fullList.count()
+
  
   })
 
@@ -55,6 +57,7 @@ const initApp = (): void => {
     fullList.clearList()
     fullList.count()
     template.clear()
+    template.render(fullList);
     
   })
 

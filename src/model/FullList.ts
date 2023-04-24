@@ -5,6 +5,7 @@ interface List {
     load(): void,
     save(): void,
     clearList(): void,
+    editItem(): void,
     addItem(itemObj: ListItem): void,
     removeItem(id: string): void,
 }
@@ -36,6 +37,7 @@ export default class FullList implements List {
 
     save(): void {
         localStorage.setItem("myList", JSON.stringify(this._list))
+        this.count();
        
     }
 
@@ -55,24 +57,23 @@ export default class FullList implements List {
         this.save()
     }
 
-    editItem(){
+    editItem(): void{
         
         // const paragraph = document.getElementById("newItem").placeholder = item.item;
         // paragraph.contentEditable = true;
         
         this.save()
     }
-    count(){
+    count(): void{
 
 
        var show = document.getElementById("showCount");
        if (show != undefined) {
-        show.innerHTML =  this._list.length.toString()
+        show.innerHTML =  this._list.length.toString();
       
         // show?.innerHTML = this._list.length
      
+    }      
     }
-
-       
-}
+  
 }
